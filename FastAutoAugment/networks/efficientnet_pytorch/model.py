@@ -252,5 +252,6 @@ class EfficientNet(nn.Module):
         the first four models (efficientnet-b{i} for i in 0,1,2,3) at the moment. """
         num_models = 4 if also_need_pretrained_weights else 8
         valid_models = ['efficientnet-b'+str(i) for i in range(num_models)]
+        valid_models += ['efficientnet-l'+str(i) for i in range(1, 10)]
         if model_name not in valid_models:
             raise ValueError(f'model_name={model_name} should be one of: ' + ', '.join(valid_models))
